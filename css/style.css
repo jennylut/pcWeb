@@ -73,7 +73,7 @@ a{
     display: block;
     width: 80px;
     height: 80px;
-    margin: 20px 0;
+    margin: 20px 15px;
 }
 #chart01{
     width:100%;
@@ -92,28 +92,36 @@ a{
     height:360px;
 }
 #chart05{
-    width:65%;
-    height:300px;
+    width:100%;
+    height:200px;
 }
 #chart06{
     width:100%;
     height: 200px;
 }
 #chart07{
-    width:30%;
-    height: 280px;
+    width:100%;
+    height: 150px;
 }
 #chart08{
-    width:30%;
-    height: 280px;
+    width:100%;
+    height: 150px;
 }
 #chart09{
-    width:30%;
-    height: 280px;
+    width:100%;
+    height: 150px;
+}
+#chart10{
+    width:100%;
+    height:400px;
 }
 #chart11{
     width:100%;
-    height:280px;
+    height:200px;
+}
+#chart12{
+    width:100%;
+    height:200px;
 }
 .pgt{
     display: flex;
@@ -189,7 +197,7 @@ a{
 /*发散图纯css*/
 .divg{
   position:relative;
-  width: 60%;
+  width: 100%;
   height: 300px;
 }
 .divg .middle {
@@ -202,8 +210,8 @@ a{
     line-height: 80px;
     font-size: 14px;
     position: absolute;
-    top: 30%;
-    left: 30%;
+    top: 32%;
+    left: 40%;
 }
 .divgItem {
      position: relative;
@@ -223,24 +231,24 @@ a{
     background: #ff6600;
 }
 .divgItem.divgItem01 {
-    top: 1%;
-    left: 32%;
+    top: 3%;
+    left: 42%;
 }
 .divgItem.divgItem02 {
-    top: 33%;
-    left: 49%;
+    top: 32%;
+    left: 72%;
 }
 .divgItem.divgItem03 {
     top: 61%;
-    left: 42%;
+    left: 62%;
 }
 .divgItem.divgItem04 {
-    top: 70%;
-    left: 28%;
+    top: 71%;
+    left: 29%;
 }
 .divgItem.divgItem05 {
     top: 34%;
-    left: 17%;
+    left: 19%;
 }
 i.divgLine {
     display: block;
@@ -270,9 +278,10 @@ i.divgLine {
     height: 44px;
 }
 .divgItem04 i.divgLine {
-    top: -49px;
-    left: 29px;
-    height: 54px;
+    top: -51px;
+    left: 45px;
+    height: 56px;
+    transform: rotate(35deg);
 }
 .divgItem05 i.divgLine {
     top: 11px;
@@ -324,11 +333,15 @@ i.divgLine {
 }
 .tableWrap th,.tableWrap td{
     /*width:54px;*/
-    height: 16px;
+    height: 40px;
     text-align: center;
     vertical-align: middle;
     border-bottom: 2px solid #fff;
     border-right: 2px solid #fff;
+}
+.tableWrap th{
+    color: #fff;
+    border-right: 0;
 }
 .tc01{
       background: #ff771d;

@@ -1361,3 +1361,53 @@ var option11 = {
 
 
 myChart11.setOption(option11);
+
+
+
+//chart12
+
+var myChart12 = echarts.init(document.getElementById('chart12'));
+var option12 = {
+    tooltip: {
+        trigger: 'item',
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
+    },
+    legend: {
+        orient: 'vertical',
+        x: 'left',
+        data:['利空','利好']
+    },
+    series: [
+        {
+            name:'访问来源',
+            type:'pie',
+            radius: ['50%', '70%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: true,
+                    textStyle: {
+                        fontSize: '16',
+                        fontWeight: 'normal'
+                    }
+                }
+            },
+            labelLine: {
+                normal: {
+                    show: false
+                }
+            },
+            data:[
+                {value:335, name:'利空'},
+                {value:234, name:'利好'},
+            ]
+        }
+    ]
+};
+
+
+myChart12.setOption(option12);
