@@ -1224,3 +1224,140 @@ var option09 = {
 };
 
 myChart09.setOption(option09);
+
+
+
+
+//chart10
+var myChart10 = echarts.init(document.getElementById('chart10'));
+
+var option10 = {
+
+    title: {
+        left: 'center',
+        text: '大数据量面积图',
+    },
+
+    xAxis: {
+        type: 'category',
+        boundaryGap: false,
+        data: [0,1,2,3,4,5,6,7]
+    },
+    yAxis: [{
+        name:'股价',
+        type: 'value',
+        boundaryGap: [0, '100%']
+    },
+        {
+            name:'涨跌幅',
+            type: 'value',
+            min: -10,
+            max: 10
+        }],
+
+    series: [
+        {
+            name:'股价',
+            type:'line',
+            smooth:true,
+            symbol: 'none',
+            sampling: 'average',
+            itemStyle: {
+                normal: {
+                    color: 'rgb(255, 70, 131)'
+                }
+            },
+            areaStyle: {
+                normal: {
+                    color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                        offset: 0,
+                        color: 'rgb(255, 158, 68)'
+                    }, {
+                        offset: 1,
+                        color: 'rgb(255, 70, 131)'
+                    }])
+                }
+            },
+            data: [2,3,4,5,6,7,6,7]
+        },
+        {
+            name:'涨跌幅',
+            type:'scatter',
+            data:[
+                [7,-3],
+                [7,-4],
+                [7,3],
+                [7,5],
+                [7,7],
+
+            ]
+        }
+    ]
+};
+
+myChart10.setOption(option10);
+
+
+
+//chart11
+var myChart11 = echarts.init(document.getElementById('chart11'));
+var option11 = {
+    title: {
+        text: '股票行情波动跟踪',
+    },
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'cross'
+        }
+    },
+    legend: {
+        data: ['点图','bar图']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: [{
+        type:'value',
+        boundaryGap: [-1,1]
+    },{
+        type: 'value',
+        boundaryGap: [0, 10]
+    }],
+    yAxis: [{
+        name:'点图',
+        type: 'category',
+    },{
+        name:'bar图',
+        type:'value',
+        data: [-10,-5,0,5,10]
+
+    }],
+    series: [
+        {
+            name: '点图',
+            type: 'scatter',
+            data: [
+                [1,-30],
+                [2,-40],
+                [5,35],
+                [7,50],
+                [9,70],
+
+            ]
+        },
+        {
+            name: 'bar图',
+            type: 'bar',
+            data: [2, 3, 5, 3, 2],
+            barWidth: '50%'
+        }
+
+    ]
+};
+
+
+myChart11.setOption(option11);

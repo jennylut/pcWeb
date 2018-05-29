@@ -30,7 +30,7 @@ html,body{
     height:100%;
 }
 body{
-    background: #fff;
+    background: #0d1639;
     font-size: 14px;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     line-height: 1.4;
@@ -48,7 +48,7 @@ a{
     float: right;
 }
 .wrap{
-    background: #5e5e5e;
+    /*background: #5e5e5e;*/
     width:100%;
     height:100%;
     overflow-y: auto;
@@ -62,9 +62,18 @@ a{
 .mg20{
     margin:20px -15px;
 }
+.mgt16{
+    margin-bottom: 16px;
+}
 .blueT{
     font-size: 18px;
     color:#3db7ff;
+}
+.logo img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    margin: 20px 0;
 }
 #chart01{
     width:100%;
@@ -101,6 +110,10 @@ a{
 #chart09{
     width:30%;
     height: 280px;
+}
+#chart11{
+    width:100%;
+    height:280px;
 }
 .pgt{
     display: flex;
@@ -358,6 +371,26 @@ i.divgLine {
 .tc01{
 
 }
+
+/* pan  style */
+.pan {
+    background: rgba(22, 30, 63, 0.75);
+}
+
+.pan-head {
+    height: 30px;
+    background: #2c233c;
+    font-size: 16px;
+    color: #d65918;
+    line-height: 30px;
+    padding: 0 20px;
+}
+.pan-body {
+    height: 200px;
+    padding: 16px 20px;
+}
+
+/*pan style*/
 @media (min-width: 1501px){
     .container {
         width: 1500px;

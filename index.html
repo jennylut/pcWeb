@@ -23,6 +23,68 @@
 <body>
    <div class="wrap">
        <div class="container">
+           <div class="logo">
+               <img src="./images/logo.png" alt="">
+           </div>
+           <div class="row">
+              <div class="col-lg-12">
+                  <div class="col-lg-4">
+                      <div class="pan mgt16">
+                          <div class="pan-head">
+                              资讯
+                          </div>
+                          <div class="pan-body">
+
+                          </div>
+                      </div>
+                      <div class="pan mgt16">
+                          <div class="pan-head">
+                              中国平安股价分析
+                          </div>
+                          <div class="pan-body">
+
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-lg-8">
+                      <div class="col-lg-6">
+                          <div class="pan mgt16">
+                              <div class="pan-head">
+                                  资讯分调
+                              </div>
+                              <div class="pan-body">
+
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-6">
+                          <div class="pan mgt16">
+                              <div class="pan-head">
+                                  分词热度
+                              </div>
+                              <div class="pan-body">
+                                  <div id="chart02"></div>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-12">
+                          <div class="pan mgt16">
+                              <div class="pan-head">
+                                  股票行情波动跟踪
+                              </div>
+                              <div class="pan-body">
+                                  <div id="chart11">
+
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+               <div class="col-lg-6">
+
+               </div>
+           </div>
            <div class="row clearfix bgfff">
                <div class="col-lg-6 bgfff">
                  <h3>大华基金</h3>
@@ -38,7 +100,7 @@
                </div>
                <div class="col-lg-6 bgfff">
                   <div class="h3Bg">关键词热度：MSCI</div>
-                   <div id="chart02"></div>
+                   <!--<div id="chart02"></div>-->
                    <div class="h3Bg">关键词热度：台湾</div>
                    <div id="chart03"></div>
                    <div class="blueT">资讯解析</div>
@@ -750,7 +812,7 @@
 <script src="./js/chart.js"></script>
 <script>
     function AddCls(){
-        $(".tc01,.tc02,tc03,.tc04,tc05,tc06,tc07,tc08,tc09").addClass("animated flash");
+        $(".tc01,.tc02,.tc03,.tc04,.tc05,.tc06,.tc07,.tc08,.tc09").addClass("animated flash");
     }
     function RemoveCls(){
         $(".tc01,.tc02,.tc03,.tc04,.tc05,.tc06,.tc07,.tc08,.tc09").removeClass("animated flash");
