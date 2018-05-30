@@ -828,73 +828,73 @@ myChart03.setOption(option03);
 
 //chart04
 
-var myChart04 = echarts.init(document.getElementById('chart04'));
-
-
-var option04  = {
-    title: {
-        text: '重仓股票'
-    },
-    tooltip: {
-        trigger: 'axis',
-        formatter: function (params) {
-            params = params[0];
-            var date = new Date(params.name);
-            return params.value[1];
-        },
-        axisPointer: {
-            animation: false
-        }
-    },
-    xAxis: {
-        type: 'value',
-        data: ['09:00', '10:00', '11:00', '11:30', '13:30','14:00','15:00'],
-
-    },
-    yAxis: {
-        type: 'value',
-        data: [2000, 3000, 6000, 4000, 2000,8000,4000],
-    },
-    series: [{
-        name: '模拟数据',
-        type: 'line',
-        showSymbol: false,
-        hoverAnimation: false,
-        //stack: '总量',
-        data: [2000, 3000, 6000, 4000, 2000,8000,4000],
-    }]
-};
-
-// setInterval(function () {
+// var myChart04 = echarts.init(document.getElementById('chart04'));
 //
 //
-//     for (var i = 0; i < 1; i++) {
-//         // data.shift();
-//         // data.push(a);
-//     }
+// var option04  = {
+//     title: {
+//         text: '重仓股票'
+//     },
+//     tooltip: {
+//         trigger: 'axis',
+//         formatter: function (params) {
+//             params = params[0];
+//             var date = new Date(params.name);
+//             return params.value[1];
+//         },
+//         axisPointer: {
+//             animation: false
+//         }
+//     },
+//     xAxis: {
+//         type: 'value',
+//         data: ['09:00', '10:00', '11:00', '11:30', '13:30','14:00','15:00'],
 //
-//     myChart04.setOption({
-//         series: [{
-//             name: '模拟数据',
-//             type: 'line',
-//             showSymbol: false,
-//             hoverAnimation: false,
-//             //stack: '总量',
-//             data: [2000, 3000, 6000, 4000, 2000,8000,4000],
-//         }]
-//     });
-//     myChart04.setOption({
-//         xAxis: [{
-//             type: 'value',
-//             splitLine: {
-//                 show: false
-//             },
-//             data: ['09：00','15：00']
-//         }]
-//     });
-// }, 2000);
-
-myChart04.setOption(option04);
+//     },
+//     yAxis: {
+//         type: 'value',
+//         data: [2000, 3000, 6000, 4000, 2000,8000,4000],
+//     },
+//     series: [{
+//         name: '模拟数据',
+//         type: 'line',
+//         showSymbol: false,
+//         hoverAnimation: false,
+//         //stack: '总量',
+//         data: [2000, 3000, 6000, 4000, 2000,8000,4000],
+//     }]
+// };
+//
+// // setInterval(function () {
+// //
+// //
+// //     for (var i = 0; i < 1; i++) {
+// //         // data.shift();
+// //         // data.push(a);
+// //     }
+// //
+// //     myChart04.setOption({
+// //         series: [{
+// //             name: '模拟数据',
+// //             type: 'line',
+// //             showSymbol: false,
+// //             hoverAnimation: false,
+// //             //stack: '总量',
+// //             data: [2000, 3000, 6000, 4000, 2000,8000,4000],
+// //         }]
+// //     });
+// //     myChart04.setOption({
+// //         xAxis: [{
+// //             type: 'value',
+// //             splitLine: {
+// //                 show: false
+// //             },
+// //             data: ['09：00','15：00']
+// //         }]
+// //     });
+// // }, 2000);
+//
+// myChart04.setOption(option04);
 
 
 
@@ -1301,64 +1301,99 @@ myChart10.setOption(option10);
 
 //chart11
 var myChart11 = echarts.init(document.getElementById('chart11'));
+var data = [
+    [[28604,77,17096869,'Australia',1990],[31163,77.4,27662440,'Canada',1990],[1516,68,1154605773,'China',1990],[13670,74.7,10582082,'Cuba',1990],[28599,75,4986705,'Finland',1990],[29476,77.1,56943299,'France',1990],[31476,75.4,78958237,'Germany',1990],[28666,78.1,254830,'Iceland',1990],[1777,57.7,870601776,'India',1990],[29550,79.1,122249285,'Japan',1990],[2076,67.9,20194354,'North Korea',1990],[12087,72,42972254,'South Korea',1990],[24021,75.4,3397534,'New Zealand',1990],[43296,76.8,4240375,'Norway',1990],[10088,70.8,38195258,'Poland',1990],[19349,69.6,147568552,'Russia',1990],[10670,67.3,53994605,'Turkey',1990],[26424,75.7,57110117,'United Kingdom',1990],[37062,75.4,252847810,'United States',1990]],
+    [[44056,81.8,23968973,'Australia',2015],[43294,81.7,35939927,'Canada',2015],[13334,76.9,1376048943,'China',2015],[21291,78.5,11389562,'Cuba',2015],[38923,80.8,5503457,'Finland',2015],[37599,81.9,64395345,'France',2015],[44053,81.1,80688545,'Germany',2015],[42182,82.8,329425,'Iceland',2015],[5903,66.8,1311050527,'India',2015],[36162,83.5,126573481,'Japan',2015],[1390,71.4,25155317,'North Korea',2015],[34644,80.7,50293439,'South Korea',2015],[34186,80.6,4528526,'New Zealand',2015],[64304,81.6,5210967,'Norway',2015],[24787,77.3,38611794,'Poland',2015],[23038,73.13,143456918,'Russia',2015],[19360,76.5,78665830,'Turkey',2015],[38225,81.4,64715810,'United Kingdom',2015],[53354,79.1,321773631,'United States',2015]]
+];
+
 var option11 = {
-    title: {
-        text: '股票行情波动跟踪',
-    },
-    tooltip: {
-        trigger: 'axis',
-        axisPointer: {
-            type: 'cross'
-        }
-    },
+    backgroundColor: "rgba(22, 30, 63, 0.75)",
+    // title: {
+    //     text: '1990 与 2015 年各国家人均寿命与 GDP'
+    // },
     legend: {
-        data: ['点图','bar图']
+        right: 10,
+        data: ['1990', '2015']
     },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    xAxis: [{
-        type:'value',
-        boundaryGap: [-1,1]
-    },{
-        type: 'value',
-        boundaryGap: [0, 10]
-    }],
-    yAxis: [{
-        name:'点图',
-        type: 'category',
-    },{
-        name:'bar图',
-        type:'value',
-        data: [-10,-5,0,5,10]
-
-    }],
-    series: [
-        {
-            name: '点图',
-            type: 'scatter',
-            data: [
-                [1,-30],
-                [2,-40],
-                [5,35],
-                [7,50],
-                [9,70],
-
-            ]
-        },
-        {
-            name: 'bar图',
-            type: 'bar',
-            data: [2, 3, 5, 3, 2],
-            barWidth: '50%'
+    xAxis: {
+        splitLine: {
+            lineStyle: {
+                type: 'dashed',
+                color:'#666699'
+            }
         }
-
-    ]
+    },
+    yAxis: {
+        splitLine: {
+            lineStyle: {
+                type: 'dashed',
+                color:'#666699'
+            }
+        },
+        scale: true
+    },
+    series: [{
+        name: '1990',
+        data: data[0],
+        type: 'scatter',
+        symbolSize: function (data) {
+            return Math.sqrt(data[2]) / 5e2;
+        },
+        label: {
+            emphasis: {
+                show: true,
+                formatter: function (param) {
+                    return param.data[3];
+                },
+                position: 'top'
+            }
+        },
+        itemStyle: {
+            normal: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(120, 36, 50, 0.5)',
+                shadowOffsetY: 5,
+                color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                    offset: 0,
+                    color: 'rgb(251, 118, 123)'
+                }, {
+                    offset: 1,
+                    color: 'rgb(204, 46, 72)'
+                }])
+            }
+        }
+    }, {
+        name: '2015',
+        data: data[1],
+        type: 'scatter',
+        symbolSize: function (data) {
+            return Math.sqrt(data[2]) / 5e2;
+        },
+        label: {
+            emphasis: {
+                show: true,
+                formatter: function (param) {
+                    return param.data[3];
+                },
+                position: 'top'
+            }
+        },
+        itemStyle: {
+            normal: {
+                shadowBlur: 10,
+                shadowColor: 'rgba(25, 100, 150, 0.5)',
+                shadowOffsetY: 5,
+                color: new echarts.graphic.RadialGradient(0.4, 0.3, 1, [{
+                    offset: 0,
+                    color: 'rgb(129, 227, 238)'
+                }, {
+                    offset: 1,
+                    color: 'rgb(25, 183, 207)'
+                }])
+            }
+        }
+    }]
 };
-
 
 myChart11.setOption(option11);
 
@@ -1411,3 +1446,50 @@ var option12 = {
 
 
 myChart12.setOption(option12);
+
+
+var myChart14 = echarts.init(document.getElementById('chart14'))
+var option14 = {
+    tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+            type: 'shadow'
+        }
+    },
+    legend: {
+        data: ['2011年']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        boundaryGap: [0, 0.01],
+        splitLine:{show: false},//去除网格线
+
+
+    },
+    yAxis: {
+        type: 'category',
+        data: ['-10%','-9%','-8%','-7%','-6%','-5%','-4%','-3%','-2%','-1%','0','1%','2%','3%','4%','5%','6%','7%','8%','9%','10%'],
+        splitLine:{show: false},//去除网格线
+
+    },
+    series: [
+        {
+            name: '2011年',
+            type: 'bar',
+            barWidth:'50%',
+            data: [1,2,2,3,4,5,6,7,7,8,9,8,7,7,6,6,4,4,2,2,1],
+            itemStyle: {
+                normal: {
+                    color: '#3398DB'
+                }
+            },
+        }
+    ]
+};
+myChart14.setOption(option14);
