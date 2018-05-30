@@ -212,6 +212,7 @@ a{
     position: absolute;
     top: 32%;
     left: 40%;
+    z-index:2;
 }
 .divgItem {
      position: relative;
@@ -404,6 +405,33 @@ i.divgLine {
 }
 
 /*pan style*/
+
+
+ul.news {
+    height: 170px;
+    overflow: hidden;
+}
+.news li{
+    background: #19294f;
+    height:50px;
+    display: table;
+    color:#fff;
+    width:100%;
+    margin-bottom: 16px;
+}
+.news .newL {
+    display: table-cell;
+    vertical-align: middle;
+    background: #1f335a;
+    height: 100%;
+    width:20%;
+    text-align: center;
+}
+.news .newR {
+    display:table-cell;
+    vertical-align: middle;
+    padding:0 20px;
+}
 @media (min-width: 1501px){
     .container {
         width: 1500px;
