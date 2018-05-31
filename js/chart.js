@@ -1020,65 +1020,60 @@ myChart06.setOption(option06);
 var myChart07 = echarts.init(document.getElementById('chart07'));
 
 var option07 = {
-    title : {
-        text: '安全类型',
-        textStyle:{
-            color:'#333',
-            fontWeight:'normal',
-            fontSize:18,
-        },
-        subtext: 'security Type',
-        subtextStyle:{
-            color:'#999',
-            fontWeight:'normal',
-            fontSize:12,
-        },
-        itemGap:2,
-        x:'right'
-    },
-    tooltip : {
+    tooltip: {
+        show:false,
         trigger: 'item',
-        formatter: "{b} : {c} ({d}%)"
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
     legend: {
         orient: 'vertical',
-        left: 'right',
+        left: '50%',
         align:'left',
-        top:'middle',
+        top:'5%',
         formatter:'',
-        data: [{name:'直接访问',icon:'rect'},{name:'邮件营销',icon:'rect'},{name:'联盟广告',icon:'rect'},{name:'视频广告',icon:'rect'},{name:'搜索引擎',icon:'rect'},]
+        textStyle:{
+            color:'#fff',
+            fontSize:12,
+            fontFamily:'DIN-Regular',
+        },
+        data: [{name:'现金管理 13%',icon:'rect'},{name:'权益管理类 13%',icon:'rect'},{name:'固定收益类 13%',icon:'rect'},{name:'黄金管理类 13%',icon:'rect'},{name:'另类(非黄金) 13%',icon:'rect'},]
     },
-    series : [
+    series: [
         {
-            name: '访问来源',
-            type: 'pie',
-            radius : '60%',
-            center: ['40%', '50%'],
-            data:[
-                {value:335, name:'直接访问',itemStyle:{normal:{color:'#FE0000'}}},
-                {value:310, name:'邮件营销',itemStyle:{normal:{color:'#F29700'}}},
-                {value:234, name:'联盟广告',itemStyle:{normal:{color:'#02B0ED'}}},
-                {value:135, name:'视频广告',itemStyle:{normal:{color:'#55E87D'}}},
-                {value:1548, name:'搜索引擎',itemStyle:{normal:{color:'#FFE200'}}}
-            ],
-            label:{
-                normal:{
-                    show:true,
-                    position:'inside',
-                    formatter:'{d}%',
-                    textStyle:{
-                        fontSize:12,
-                        color:'#fff',
+            name:'访问来源',
+            type:'pie',
+            radius: ['60%', '88%'],
+            center: ['25%', '45%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: false,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
                     }
                 }
             },
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+            itemStyle:{
+                 borderColor:'#141f3d',
+                borderWidth: 4,
+            },
+            labelLine: {
+                normal: {
+                    show: false
                 }
-            }
+            },
+            data:[
+                {value:335, name:'现金管理 13%',itemStyle:{normal:{color:'#c54e28'}}},
+                {value:310, name:'权益管理类 13%',itemStyle:{normal:{color:'#365278'}}},
+                {value:234, name:'固定收益类 13%',itemStyle:{normal:{color:'#197bba'}}},
+                {value:135, name:'黄金管理类 13%',itemStyle:{normal:{color:'#0faed9'}}},
+                {value:1548, name:'另类(非黄金) 13%',itemStyle:{normal:{color:'#d0d2d8'}}}
+            ]
         }
     ]
 };
@@ -1090,65 +1085,60 @@ myChart07.setOption(option07);
 var myChart08 = echarts.init(document.getElementById('chart08'));
 
 var option08 = {
-    title : {
-        text: '资产类型',
-        textStyle:{
-            color:'#333',
-            fontWeight:'normal',
-            fontSize:18,
-        },
-        subtext: 'security Type',
-        subtextStyle:{
-            color:'#999',
-            fontWeight:'normal',
-            fontSize:12,
-        },
-        itemGap:2,
-        x:'right'
-    },
-    tooltip : {
+    tooltip: {
+        show:false,
         trigger: 'item',
-        formatter: "{b} : {c} ({d}%)"
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
     legend: {
         orient: 'vertical',
-        left: 'right',
+        left: '50%',
         align:'left',
-        top:'middle',
+        top:'5%',
         formatter:'',
-        data: [{name:'直接访问',icon:'rect'},{name:'邮件营销',icon:'rect'},{name:'联盟广告',icon:'rect'},{name:'视频广告',icon:'rect'},{name:'搜索引擎',icon:'rect'},]
+        textStyle:{
+            color:'#fff',
+            fontSize:12,
+            fontFamily:'DIN-Regular',
+        },
+        data: [{name:'现金管理 13%',icon:'rect'},{name:'权益管理类 13%',icon:'rect'},{name:'固定收益类 13%',icon:'rect'},{name:'黄金管理类 13%',icon:'rect'},{name:'另类(非黄金) 13%',icon:'rect'},]
     },
-    series : [
+    series: [
         {
-            name: '访问来源',
-            type: 'pie',
-            radius : '60%',
-            center: ['40%', '50%'],
-            data:[
-                {value:335, name:'直接访问',itemStyle:{normal:{color:'#FE0000'}}},
-                {value:310, name:'邮件营销',itemStyle:{normal:{color:'#F29700'}}},
-                {value:234, name:'联盟广告',itemStyle:{normal:{color:'#02B0ED'}}},
-                {value:135, name:'视频广告',itemStyle:{normal:{color:'#55E87D'}}},
-                {value:1548, name:'搜索引擎',itemStyle:{normal:{color:'#FFE200'}}}
-            ],
-            label:{
-                normal:{
-                    show:true,
-                    position:'inside',
-                    formatter:'{d}%',
-                    textStyle:{
-                        fontSize:12,
-                        color:'#fff',
+            name:'访问来源',
+            type:'pie',
+            radius: ['60%', '88%'],
+            center: ['25%', '45%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: false,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
                     }
                 }
             },
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+            itemStyle:{
+                borderColor:'#141f3d',
+                borderWidth: 4,
+            },
+            labelLine: {
+                normal: {
+                    show: false
                 }
-            }
+            },
+            data:[
+                {value:335, name:'现金管理 13%',itemStyle:{normal:{color:'#c54e28'}}},
+                {value:310, name:'权益管理类 13%',itemStyle:{normal:{color:'#365278'}}},
+                {value:234, name:'固定收益类 13%',itemStyle:{normal:{color:'#197bba'}}},
+                {value:135, name:'黄金管理类 13%',itemStyle:{normal:{color:'#0faed9'}}},
+                {value:1548, name:'另类(非黄金) 13%',itemStyle:{normal:{color:'#d0d2d8'}}}
+            ]
         }
     ]
 };
@@ -1160,65 +1150,60 @@ myChart08.setOption(option08);
 var myChart09 = echarts.init(document.getElementById('chart09'));
 
 var option09 = {
-    title : {
-        text: '散区类型',
-        textStyle:{
-            color:'#333',
-            fontWeight:'normal',
-            fontSize:18,
-        },
-        subtext: 'security Type',
-        subtextStyle:{
-            color:'#999',
-            fontWeight:'normal',
-            fontSize:12,
-        },
-        itemGap:2,//主标题和副标题之间的距离
-        x:'right'
-    },
-    tooltip : {
+    tooltip: {
+        show:false,
         trigger: 'item',
-        formatter: "{b} : {c} ({d}%)"
+        formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
     legend: {
         orient: 'vertical',
-        left: 'right',
+        left: '50%',
         align:'left',
-        top:'middle',
+        top:'5%',
         formatter:'',
-        data: [{name:'直接访问',icon:'rect'},{name:'邮件营销',icon:'rect'},{name:'联盟广告',icon:'rect'},{name:'视频广告',icon:'rect'},{name:'搜索引擎',icon:'rect'},]
+        textStyle:{
+            color:'#fff',
+            fontSize:12,
+            fontFamily:'DIN-Regular',
+        },
+        data: [{name:'现金管理 13%',icon:'rect'},{name:'权益管理类 13%',icon:'rect'},{name:'固定收益类 13%',icon:'rect'},{name:'黄金管理类 13%',icon:'rect'},{name:'另类(非黄金) 13%',icon:'rect'},]
     },
-    series : [
+    series: [
         {
-            name: '访问来源',
-            type: 'pie',
-            radius : '60%',
-            center: ['40%', '50%'],
-            data:[
-                {value:335, name:'直接访问',itemStyle:{normal:{color:'#FE0000'}}},
-                {value:310, name:'邮件营销',itemStyle:{normal:{color:'#F29700'}}},
-                {value:234, name:'联盟广告',itemStyle:{normal:{color:'#02B0ED'}}},
-                {value:135, name:'视频广告',itemStyle:{normal:{color:'#55E87D'}}},
-                {value:1548, name:'搜索引擎',itemStyle:{normal:{color:'#FFE200'}}}
-            ],
-            label:{
-                normal:{
-                    show:true,
-                    position:'inside',
-                    formatter:'{d}%',
-                    textStyle:{
-                        fontSize:12,
-                        color:'#fff',
+            name:'访问来源',
+            type:'pie',
+            radius: ['60%', '88%'],
+            center: ['25%', '45%'],
+            avoidLabelOverlap: false,
+            label: {
+                normal: {
+                    show: false,
+                    position: 'center'
+                },
+                emphasis: {
+                    show: false,
+                    textStyle: {
+                        fontSize: '30',
+                        fontWeight: 'bold'
                     }
                 }
             },
-            itemStyle: {
-                emphasis: {
-                    shadowBlur: 10,
-                    shadowOffsetX: 0,
-                    shadowColor: 'rgba(0, 0, 0, 0.5)'
+            itemStyle:{
+                borderColor:'#141f3d',
+                borderWidth: 4,
+            },
+            labelLine: {
+                normal: {
+                    show: false
                 }
-            }
+            },
+            data:[
+                {value:335, name:'现金管理 13%',itemStyle:{normal:{color:'#c54e28'}}},
+                {value:310, name:'权益管理类 13%',itemStyle:{normal:{color:'#365278'}}},
+                {value:234, name:'固定收益类 13%',itemStyle:{normal:{color:'#197bba'}}},
+                {value:135, name:'黄金管理类 13%',itemStyle:{normal:{color:'#0faed9'}}},
+                {value:1548, name:'另类(非黄金) 13%',itemStyle:{normal:{color:'#d0d2d8'}}}
+            ]
         }
     ]
 };

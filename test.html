@@ -5,8 +5,8 @@
     <title>Printer Demo</title>
     <style>
         body{background:#24313d; padding:0;}
-        #tagsList {position:relative; width:600px; height:600px; margin: -50px auto; background:#24313d;}
-        #tagsList a {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
+        #tagsList {position:relative; width:500px; height:300px; margin: 0px auto; background:#24313d;}
+        #tagsList span {position:absolute; top:0px; left:0px; font-family: Microsoft YaHei; color:#fff; font-weight:bold; text-decoration:none; padding: 3px 6px; }
         #tagsList a:hover { color:#FF0000; letter-spacing:2px;}
     </style>
 </head>
@@ -14,36 +14,24 @@
 
 <body>
 <div id="tagsList">
-    <span><a href="http://www.hao123.com/haoserver/kuaidi.htm">快递查询</a></span>
-    <span><a href="http://lvyou.hao123.com/huoche">火车票查询</a></span>
-    <span><a href="http://flight.qunar.com/?dh=hotk_P0T0M0">机票</a></span>
-    <span><a href="http://www.hao123.com/haoserver/showjicc.htm">手机号</a></span>
-    <span><a href="http://map.baidu.com/?daddr=%20&dirflag=t">公交查询</a></span>
-    <span><a href="http://app.baidu.com/app/enter?appid=101283">身份证</a></span>
-    <span><a href="http://www.weather.com.cn/static/html/weather.shtml">天气预报</a></span>
-    <span><a href="http://www.hao123.com/ss/fy.htm">在线翻译</a></span>
-    <span><a href="http://www.hao123.com/haoserver/jiaotongcx.htm">交通违章</a></span>
-    <span><a href="http://www.ip138.com/">IP地址</a></span>
-    <span><a href="http://365rili.duapp.com/">万年历</a></span>
-    <span><a href="http://www.51jiemeng.com/">周公解梦</a></span>
-    <span><a href="http://web2.qq.com/">网页QQ</a></span>
-    <span><a href="http://shurufa.baidu.com/">百度输入法</a></span>
-    <span><a href="http://ttplayer.qianqian.com/down.html">千千静听</a></span>
-    <span><a href="http://www.hao123.com/wow.htm">魔兽世界</a></span>
-    <span><a href="http://xyq.163.com/">梦幻西游</a></span>
-    <span><a href="http://xyx.hao123.com/game/game_0_4.html">洛克王国</a></span>
-    <span><a href="http://dnf.qq.com/">DNF</a></span>
-    <span><a href="http://dota.uuu9.com/">DOTA</a></span>
-    <span><a href="http://cf.qq.com/">CF</a></span>
-    <span><a href="http://djyx.hao123.com/">单机游戏</a></span>
-    <span><a href="http://xyx.hao123.com/">小游戏</a></span>
-    <span><a href="http://speed.qq.com/">QQ飞车</a></span>
-    <span><a href="http://xyx.hao123.com/pic_0_0_1_21_0.html">植物大战僵尸</a></span>
-    <span><a href="http://xyx.hao123.com/pic_0_0_1_32_0.html">连连看</a></span>
-    <span><a href="http://xyx.hao123.com/pic_0_0_1_91_0.html">斗地主</a></span>
-    <span><a href="http://xyx.hao123.com/pic_0_0_1_75_0.html">合金弹头</a></span>
-    <span><a href="http://www.hao123.com/radish">保卫萝卜</a></span>
-    <span><a href="http://1314.qq.com/">玫瑰小镇</a></span>
+    <span>平安</span>
+    <span>保险</span>
+    <span>金融</span>
+    <span>优才计划</span>
+    <span>品质</span>
+    <span>科技</span>
+    <span>智慧</span>
+    <span>安全</span>
+    <span>社会责任</span>
+    <span>队伍管理</span>
+    <span>区块链</span>
+    <span>利润</span>
+    <span>责任心</a></span>
+    <span>综合素质</a></span>
+    <span>服务精神</a></span>
+    <span>管理</a></span>
+    <span>社会形象</a></span>
+    <span>智能运营</a></span>
 </div>
 
 </body>
@@ -76,7 +64,7 @@
 
             oDiv=document.getElementById('tagsList');
 
-            aA=oDiv.getElementsByTagName('a');
+            aA=oDiv.getElementsByTagName('span');
 
             for(i=0;i<aA.length;i++)
             {

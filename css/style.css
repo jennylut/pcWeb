@@ -54,10 +54,11 @@ a{
     float: right;
 }
 .wrap{
-    /*background: #5e5e5e;*/
     width:100%;
     height:100%;
     overflow-y: auto;
+    background: url("../images/bg.png") repeat-y center center;
+    background-size:cover;
 }
 .bgfff{
     background: #fff;
@@ -71,13 +72,16 @@ a{
 .mgt16{
     margin-bottom: 16px;
 }
+.mgt40{
+    margin-bottom: 40px;
+}
 .blueT{
     font-size: 18px;
     color:#3db7ff;
 }
 .logo {
     padding: 20px 15px;
-    font-size: 18px;
+    font-size: 36px;
     color: #fff;
 }
 .logo img {
@@ -112,15 +116,15 @@ a{
 }
 #chart07{
     width:100%;
-    height: 150px;
+    height: 170px;
 }
 #chart08{
     width:100%;
-    height: 150px;
+    height: 170px;
 }
 #chart09{
     width:100%;
-    height: 150px;
+    height: 170px;
 }
 #chart10{
     width:100%;
@@ -137,6 +141,25 @@ a{
 #chart12{
     width:100%;
     height:200px;
+}
+.pieW{
+    position: relative;
+    height: 170px;
+}
+.pieP{
+    position: absolute;
+    color: #fff;
+    top: 30%;
+    left: 17%;
+    text-align: center;
+    width: 74px;
+}
+.pieP span{
+    display: block;
+    font-size: 12px;
+}
+.pieP span:first-child{
+    font-size: 24px;
 }
 .pgt{
     display: flex;
@@ -347,76 +370,87 @@ i.divgLine {
 .tableWrap table{
     width:100%;
 }
-.tableWrap th,.tableWrap td{
-    /*width:54px;*/
-    height: 40px;
+.tableWrap td{
+    height: 45px;
     text-align: center;
     vertical-align: middle;
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
+    background: rgba(23, 31, 62, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 .tableWrap th{
     color: #fff;
     border-right: 0;
+    opacity: 0.2;
+    background: #3B5F86;
+    font-size: 12px;
+    height: 30px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #1c2a4c;
 }
-.tc01{
-      background: #ff771d;
-  }
-.tc02{
-    background: #00a1ff;
-}
-.tc03{
-    background: #666699;
-}
-.tc04{
-    background: #ff3300;
-}
-.tc05{
-    background: #ff9900;
-}
-.tc06{
-    background: #996633;
-}
-.tc07{
-    background: #c9c9c9;
-}
-.tc08{
-    background: #5dca63;
-}
-.tc09{
-    background: #ffd211;
-}
+/*.tc01{*/
+      /*background: #ff771d;*/
+  /*}*/
+/*.tc02{*/
+    /*background: #00a1ff;*/
+/*}*/
+/*.tc03{*/
+    /*background: #666699;*/
+/*}*/
+/*.tc04{*/
+    /*background: #ff3300;*/
+/*}*/
+/*.tc05{*/
+    /*background: #ff9900;*/
+/*}*/
+/*.tc06{*/
+    /*background: #996633;*/
+/*}*/
+/*.tc07{*/
+    /*background: #c9c9c9;*/
+/*}*/
+/*.tc08{*/
+    /*background: #5dca63;*/
+/*}*/
+/*.tc09{*/
+    /*background: #ffd211;*/
+/*}*/
 .tableWrap th span,.tableWrap td span{
     display: block;
     color: #fff;
     font-size: 12px;
 }
-.tableWrap tr th:last-child,.tableWrap tr td:last-child{
-    border-right: 0;
+.tableWrap td span:first-child{
+    font-size: 14px;
 }
-.tableWrap tbody tr:last-child td{
-    border-bottom:0
+.tableWrap td.tcOrange{
+    background: rgba(240, 90, 35, 0.2);
 }
-.tc01{
+/*.tableWrap tr th:last-child,.tableWrap tr td:last-child{*/
+    /*border-right: 0;*/
+/*}*/
+/*.tableWrap tbody tr:last-child td{*/
+    /*border-bottom:0*/
+/*}*/
 
-}
 
 /* pan  style */
 .pan {
-    background: rgba(22, 30, 63, 0.75);
+    background: rgba(23, 31, 62, 0.8);
 }
 
 .pan-head {
-    height: 30px;
-    background: #2c233c;
-    font-size: 16px;
-    color: #d65918;
-    line-height: 30px;
-    padding: 0 20px;
+    height: 44px;
+    background: rgba(240, 90, 35, 0.1);
+    font-size: 24px;
+    color: #F05A23;
+    line-height: 44px;
+    padding: 0 26px;
 }
 .pan-body {
-    height: 200px;
-    padding: 16px 20px;
+    height: 330px;
+    padding: 24px;
 }
 
 /*pan style*/
@@ -429,17 +463,18 @@ ul.news {
     /*overflow: hidden;*/
 }
 .news li{
-    background: #19294f;
-    height:50px;
+    background: rgba(25, 146, 217, 0.1);
+    height:120px;
     display: table;
     color:#fff;
+    font-size: 20px;
     width:100%;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
 }
 .news .newL {
     display: table-cell;
     vertical-align: middle;
-    background: #1f335a;
+    background: #3B5F86;
     height: 100%;
     width:20%;
     text-align: center;
@@ -447,7 +482,7 @@ ul.news {
 .news .newR {
     display:table-cell;
     vertical-align: middle;
-    padding:0 20px;
+    padding:0 16px;
 }
 .news li:first-child .newL{
     background: linear-gradient(#e17c3b,#d45723);
@@ -460,12 +495,118 @@ ul.news {
     height: 100%;
     color:#fff;
 }
-@media (min-width: 1501px){
+
+
+/*高频交易模拟 start*/
+.highL{
+    float: left;
+    width: 56%;
+    margin-right: 20px;
+    height: 450px;
+    overflow: hidden;
+}
+
+.highL .title01 {
+    color: #fff;
+    font-size: 20px;
+}
+.highL .title01 em{
+    display: inline-block;
+    font-size: 14px;
+    background: rgba(59, 95, 134, 0.3);
+    padding: 0 4px;
+    height: 20px;
+    line-height: 20px;
+    vertical-align: middle;
+}
+.highL .title02 {
+    font-size: 46px;
+    color: #F05A23;
+}
+.highL .title03 {
+    font-size: 20px;
+    color: #F05A23;
+    padding-bottom: 20px;
+}
+.highLT {
+    background: rgba(59, 95, 134, 0.1);
+    padding: 2px 10px 8px;
+}
+.highLT table{
+    background: #171F3E;
+    width:100%;
+}
+.highLT th,.highL td{
+    font-size: 12px;
+    color: #fff;
+    height: 30px;
+    vertical-align: middle;
+    text-align: right;
+}
+.highLT th{
+    background: rgba(59, 95, 134, 0.1);
+}
+.highL tr th:first-child,.highL tr td:first-child{
+    text-align: left;
+}
+.highL tbody tr{
+    border-bottom: 1px solid #1c2745;
+}
+.highR {
+    float: right;
+    width: calc(43% - 20px);
+    height: 450px;
+    overflow: hidden;
+}
+.highR table{
+    width:100%;
+}
+.highR th,.highR td{
+    font-size: 12px;
+    color: #fff;
+    height: 30px;
+    vertical-align: middle;
+    padding: 0 4px;
+}
+.highR th{
+    background: rgba(59, 95, 134, 0.1);
+}
+.highR tr{
+    padding:0 4px;
+}
+.highR tbody tr:nth-child(2n){
+    background: rgba(59, 95, 134, 0.1);
+}
+.highR tbody tr td:last-child,.highR thead tr th:last-child{
+    text-align: right;
+}
+.highR .tGreen{
+    color: #2FDAD3;;
+}
+.highR .tRed{
+    color: #F05A23;;
+}
+/*高频交易模拟 end*/
+@media (min-width: 1501px) and (max-width: 1800px){
     .container {
         width: 1500px;
     }
 }
-
+@media (min-width: 1801px) and (max-width: 2500px){
+    .container {
+        width: 1800px;
+    }
+}
+@media (min-width: 2501px) and (max-width: 3200px){
+    .container {
+        width: 2500px;
+    }
+}
+@media (min-width: 3201px) {
+    .container {
+        width: 3200px;
+    }
+}
 @media (min-width: 1200px) and (max-width: 1500px){
     .container {
         width: 1170px;
