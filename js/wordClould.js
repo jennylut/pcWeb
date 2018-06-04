@@ -1,154 +1,241 @@
-/*  ======================= SETUP ======================= */
-var config = {
-    trace: true,
-    spiralResolution: 1, //Lower = better resolution
-    spiralLimit: 360 * 5,
-    lineHeight: 0.8,
-    xWordPadding: 0,
-    yWordPadding: 3,
-    font: "sans-serif"
-}
+;(function(){
 
-var words = ["words", "are", "cool", "and", "so", "are", "you", "inconstituent", "funhouse!", "apart", "from", "Steve", "fish"].map(function(word) {
-    return {
-        word: word,
-        freq: Math.floor(Math.random() * 50) + 10
-    }
-})
+    var radius = 120;
+    var dtr = Math.PI/180;
+    var d=300;
+    var mcList = [];
+    var active = false;
+    var lasta = 1;
+    var lastb = 1;
+    var distr = true;
+    var tspeed=10;
+    var size=250;
 
-words.sort(function(a, b) {
-    return -1 * (a.freq - b.freq);
-});
+    var mouseX=0;
+    var mouseY=0;
 
-var cloud = document.getElementById("word-cloud");
-cloud.style.position = "relative";
-cloud.style.fontFamily = config.font;
+    var howElliptical=1;
 
-var traceCanvas = document.createElement("canvas");
-traceCanvas.width = cloud.offsetWidth;
-traceCanvas.height = cloud.offsetHeight;
-var traceCanvasCtx = traceCanvas.getContext("2d");
-cloud.appendChild(traceCanvas);
+    var aA=null;
+    var oDiv=null;
 
-var startPoint = {
-    x: cloud.offsetWidth / 2,
-    y: cloud.offsetHeight / 2
-};
+    window.onload=function ()
+    {
+        var i=0;
+        var oTag=null;
 
-var wordsDown = [];
-/* ======================= END SETUP ======================= */
+        oDiv=document.getElementById('tagsList');
 
+        aA=oDiv.getElementsByTagName('span');
 
+        for(i=0;i<aA.length;i++)
+        {
+            oTag={};
 
+            oTag.offsetWidth=aA[i].offsetWidth;
+            oTag.offsetHeight=aA[i].offsetHeight;
 
-
-/* =======================  PLACEMENT FUNCTIONS =======================  */
-function createWordObject(word, freq) {
-    var wordContainer = document.createElement("div");
-    wordContainer.style.position = "absolute";
-    wordContainer.style.fontSize = freq + "px";
-    wordContainer.style.lineHeight = config.lineHeight;
-    /*    wordContainer.style.transform = "translateX(-50%) translateY(-50%)";*/
-    wordContainer.appendChild(document.createTextNode(word));
-
-    return wordContainer;
-}
-
-function placeWord(word, x, y) {
-
-    cloud.appendChild(word);
-    word.style.left = x - word.offsetWidth/2 + "px";
-    word.style.top = y - word.offsetHeight/2 + "px";
-
-    wordsDown.push(word.getBoundingClientRect());
-}
-
-function trace(x, y) {
-//     traceCanvasCtx.lineTo(x, y);
-//     traceCanvasCtx.stroke();
-    traceCanvasCtx.fillRect(x, y, 1, 1);
-}
-
-function spiral(i, callback) {
-    angle = config.spiralResolution * i;
-    x = (1 + angle) * Math.cos(angle);
-    y = (1 + angle) * Math.sin(angle);
-    return callback ? callback() : null;
-}
-
-function intersect(word, x, y) {
-    cloud.appendChild(word);
-
-    word.style.left = x - word.offsetWidth/2 + "px";
-    word.style.top = y - word.offsetHeight/2 + "px";
-
-    var currentWord = word.getBoundingClientRect();
-
-    cloud.removeChild(word);
-
-    for(var i = 0; i < wordsDown.length; i+=1){
-        var comparisonWord = wordsDown[i];
-
-        if(!(currentWord.right + config.xWordPadding < comparisonWord.left - config.xWordPadding ||
-            currentWord.left - config.xWordPadding > comparisonWord.right + config.wXordPadding ||
-            currentWord.bottom + config.yWordPadding < comparisonWord.top - config.yWordPadding ||
-            currentWord.top - config.yWordPadding > comparisonWord.bottom + config.yWordPadding)){
-
-            return true;
+            mcList.push(oTag);
         }
+
+        sineCosine( 0,0,0 );
+
+        positionAll();
+
+        oDiv.onmouseover=function ()
+        {
+            active=true;
+        };
+
+        oDiv.onmouseout=function ()
+        {
+            active=false;
+        };
+
+        oDiv.onmousemove=function (ev)
+        {
+            var oEvent=window.event || ev;
+
+            mouseX=oEvent.clientX-(oDiv.offsetLeft+oDiv.offsetWidth/2);
+            mouseY=oEvent.clientY-(oDiv.offsetTop+oDiv.offsetHeight/2);
+
+            mouseX/=5;
+            mouseY/=5;
+        };
+
+        setInterval(update, 30);
+    };
+
+    function update()
+    {
+        var a;
+        var b;
+
+        if(active)
+        {
+            a = (-Math.min( Math.max( -mouseY, -size ), size ) / radius ) * tspeed;
+            b = (Math.min( Math.max( -mouseX, -size ), size ) / radius ) * tspeed;
+        }
+        else
+        {
+            a = lasta * 0.98;
+            b = lastb * 0.98;
+        }
+
+        lasta=a;
+        lastb=b;
+
+        if(Math.abs(a)<=0.01 && Math.abs(b)<=0.01)
+        {
+            return;
+        }
+
+        var c=0;
+        sineCosine(a,b,c);
+        for(var j=0;j<mcList.length;j++)
+        {
+            var rx1=mcList[j].cx;
+            var ry1=mcList[j].cy*ca+mcList[j].cz*(-sa);
+            var rz1=mcList[j].cy*sa+mcList[j].cz*ca;
+
+            var rx2=rx1*cb+rz1*sb;
+            var ry2=ry1;
+            var rz2=rx1*(-sb)+rz1*cb;
+
+            var rx3=rx2*cc+ry2*(-sc);
+            var ry3=rx2*sc+ry2*cc;
+            var rz3=rz2;
+
+            mcList[j].cx=rx3;
+            mcList[j].cy=ry3;
+            mcList[j].cz=rz3;
+
+            per=d/(d+rz3);
+
+            mcList[j].x=(howElliptical*rx3*per)-(howElliptical*2);
+            mcList[j].y=ry3*per;
+            mcList[j].scale=per;
+            mcList[j].alpha=per;
+
+            mcList[j].alpha=(mcList[j].alpha-0.6)*(10/6);
+        }
+
+        doPosition();
+        depthSort();
     }
 
-    return false;
-}
-/* =======================  END PLACEMENT FUNCTIONS =======================  */
+    function depthSort()
+    {
+        var i=0;
+        var aTmp=[];
 
+        for(i=0;i<aA.length;i++)
+        {
+            aTmp.push(aA[i]);
+        }
 
-
-
-
-/* =======================  LETS GO! =======================  */
-(function placeWords() {
-    for (var i = 0; i < words.length; i += 1) {
-
-        var word = createWordObject(words[i].word, words[i].freq);
-
-        for (var j = 0; j < config.spiralLimit; j++) {
-            //If the spiral function returns true, we've placed the word down and can break from the j loop
-            if (spiral(j, function() {
-                if (!intersect(word, startPoint.x + x, startPoint.y + y)) {
-                    placeWord(word, startPoint.x + x, startPoint.y + y);
-                    return true;
+        aTmp.sort
+        (
+            function (vItem1, vItem2)
+            {
+                if(vItem1.cz>vItem2.cz)
+                {
+                    return -1;
                 }
-            })) {
-                break;
+                else if(vItem1.cz<vItem2.cz)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 0;
+                }
             }
+        );
+
+        for(i=0;i<aTmp.length;i++)
+        {
+            aTmp[i].style.zIndex=i;
         }
     }
-})();
-/* ======================= WHEW. THAT WAS FUN. We should do that again sometime ... ======================= */
 
+    function positionAll()
+    {
+        var phi=0;
+        var theta=0;
+        var max=mcList.length;
+        var i=0;
 
+        var aTmp=[];
+        var oFragment=document.createDocumentFragment();
 
-/* =======================  Draw the placement spiral if trace lines is on ======================= */
-(function traceSpiral() {
-
-    traceCanvasCtx.beginPath();
-
-    if (config.trace) {
-        var frame = 1;
-
-        function animate() {
-            spiral(frame, function() {
-                trace(startPoint.x + x, startPoint.y + y);
-            });
-
-            frame += 1;
-
-            if (frame < config.spiralLimit) {
-                window.requestAnimationFrame(animate);
-            }
+        //随机排序
+        for(i=0;i<aA.length;i++)
+        {
+            aTmp.push(aA[i]);
         }
 
-        animate();
+        aTmp.sort
+        (
+            function ()
+            {
+                return Math.random()<0.5?1:-1;
+            }
+        );
+
+        for(i=0;i<aTmp.length;i++)
+        {
+            oFragment.appendChild(aTmp[i]);
+        }
+
+        oDiv.appendChild(oFragment);
+
+        for( var i=1; i<max+1; i++){
+            if( distr )
+            {
+                phi = Math.acos(-1+(2*i-1)/max);
+                theta = Math.sqrt(max*Math.PI)*phi;
+            }
+            else
+            {
+                phi = Math.random()*(Math.PI);
+                theta = Math.random()*(2*Math.PI);
+            }
+            //坐标变换
+            mcList[i-1].cx = radius * Math.cos(theta)*Math.sin(phi);
+            mcList[i-1].cy = radius * Math.sin(theta)*Math.sin(phi);
+            mcList[i-1].cz = radius * Math.cos(phi);
+
+            aA[i-1].style.left=mcList[i-1].cx+oDiv.offsetWidth/2-mcList[i-1].offsetWidth/2+'px';
+            aA[i-1].style.top=mcList[i-1].cy+oDiv.offsetHeight/2-mcList[i-1].offsetHeight/2+'px';
+        }
     }
+
+    function doPosition()
+    {
+        var l=oDiv.offsetWidth/2;
+        var t=oDiv.offsetHeight/2;
+        for(var i=0;i<mcList.length;i++)
+        {
+            aA[i].style.left=mcList[i].cx+l-mcList[i].offsetWidth/2+'px';
+            aA[i].style.top=mcList[i].cy+t-mcList[i].offsetHeight/2+'px';
+
+            aA[i].style.fontSize=Math.ceil(12*mcList[i].scale/2)+8+'px';
+
+            aA[i].style.filter="alpha(opacity="+100*mcList[i].alpha+")";
+            aA[i].style.opacity=mcList[i].alpha;
+        }
+    }
+
+    function sineCosine( a, b, c)
+    {
+        sa = Math.sin(a * dtr);
+        ca = Math.cos(a * dtr);
+        sb = Math.sin(b * dtr);
+        cb = Math.cos(b * dtr);
+        sc = Math.sin(c * dtr);
+        cc = Math.cos(c * dtr);
+    }
+
+
 })();

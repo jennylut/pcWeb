@@ -716,115 +716,115 @@
 
 
 //chart02
-var myChart02 = echarts.init(document.getElementById('chart02'));
-
-var option02 = {
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        splitLine:{show: false},//去除网格线
-        axisTick:{
-            show:false//轴刻度线隐藏
-        },
-        axisLine:{
-            show:false,//轴线隐藏
-        },
-        axisLabel:{//字体颜色调整
-            textStyle:{
-                color:'#999',
-                fontSize:12,
-            }
-
-        },
-        data: ['4月12号', '4月13号', '4月14号', '4月15号', '4月16号', '4月17号', '4月18号']
-    },
-    yAxis: {
-        type: 'value',
-        axisTick:{
-            show:false//轴刻度线隐藏
-        },
-        axisLine:{
-            show:false,//轴线隐藏
-        },
-        axisLabel:{//字体颜色调整
-            textStyle:{
-                color:'#999',
-                fontSize:12,
-            }
-
-        },
-        splitLine:{show: false},//去除网格线
-    },
-    series: [{
-        data: [2000, 4000, 1000, 6000, 1000,8000,4000],
-        type: 'line',
-        itemStyle:{
-            opacity:0,
-        },
-        areaStyle: {}
-    }]
-};
-
-myChart02.setOption(option02);
+// var myChart02 = echarts.init(document.getElementById('chart02'));
+//
+// var option02 = {
+//     xAxis: {
+//         type: 'category',
+//         boundaryGap: false,
+//         splitLine:{show: false},//去除网格线
+//         axisTick:{
+//             show:false//轴刻度线隐藏
+//         },
+//         axisLine:{
+//             show:false,//轴线隐藏
+//         },
+//         axisLabel:{//字体颜色调整
+//             textStyle:{
+//                 color:'#999',
+//                 fontSize:12,
+//             }
+//
+//         },
+//         data: ['4月12号', '4月13号', '4月14号', '4月15号', '4月16号', '4月17号', '4月18号']
+//     },
+//     yAxis: {
+//         type: 'value',
+//         axisTick:{
+//             show:false//轴刻度线隐藏
+//         },
+//         axisLine:{
+//             show:false,//轴线隐藏
+//         },
+//         axisLabel:{//字体颜色调整
+//             textStyle:{
+//                 color:'#999',
+//                 fontSize:12,
+//             }
+//
+//         },
+//         splitLine:{show: false},//去除网格线
+//     },
+//     series: [{
+//         data: [2000, 4000, 1000, 6000, 1000,8000,4000],
+//         type: 'line',
+//         itemStyle:{
+//             opacity:0,
+//         },
+//         areaStyle: {}
+//     }]
+// };
+//
+// myChart02.setOption(option02);
 
 
 
 //chart03
-var myChart03 = echarts.init(document.getElementById('chart03'));
-
-var option03 = {
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        splitLine:{show: false},//去除网格线
-        axisLabel:{//字体颜色调整
-            textStyle:{
-                color:'#999',
-                fontSize:12,
-            }
-
-        },
-        axisLine:{
-            show:false,
-        },
-        axisTick:{
-            show:false
-        },
-        data: ['4月12号', '4月13号', '4月14号', '4月15号', '4月16号', '4月17号', '4月18号']
-    },
-    yAxis: {
-        type: 'value',
-        axisTick:{
-            show:false//轴刻度线隐藏
-        },
-        axisLine:{
-            show:false,//轴线隐藏
-        },
-        axisLabel:{//字体颜色调整
-            textStyle:{
-                color:'#999',
-                fontSize:12,
-            }
-
-        },
-        splitLine:{show: false},//去除网格线
-    },
-    series: [{
-        data: [2000, 3000, 6000, 4000, 2000,8000,4000],
-        type: 'line',
-        itemStyle:{
-            opacity:0,//折线条圆点
-        },
-        lineStyle:{
-            color:'#75bbe2',//折线条颜色
-        },
-        areaStyle: {
-            color: '#75bbe2',//背景填充颜色
-        }
-    }]
-};
-
-myChart03.setOption(option03);
+// var myChart03 = echarts.init(document.getElementById('chart03'));
+//
+// var option03 = {
+//     xAxis: {
+//         type: 'category',
+//         boundaryGap: false,
+//         splitLine:{show: false},//去除网格线
+//         axisLabel:{//字体颜色调整
+//             textStyle:{
+//                 color:'#999',
+//                 fontSize:12,
+//             }
+//
+//         },
+//         axisLine:{
+//             show:false,
+//         },
+//         axisTick:{
+//             show:false
+//         },
+//         data: ['4月12号', '4月13号', '4月14号', '4月15号', '4月16号', '4月17号', '4月18号']
+//     },
+//     yAxis: {
+//         type: 'value',
+//         axisTick:{
+//             show:false//轴刻度线隐藏
+//         },
+//         axisLine:{
+//             show:false,//轴线隐藏
+//         },
+//         axisLabel:{//字体颜色调整
+//             textStyle:{
+//                 color:'#999',
+//                 fontSize:12,
+//             }
+//
+//         },
+//         splitLine:{show: false},//去除网格线
+//     },
+//     series: [{
+//         data: [2000, 3000, 6000, 4000, 2000,8000,4000],
+//         type: 'line',
+//         itemStyle:{
+//             opacity:0,//折线条圆点
+//         },
+//         lineStyle:{
+//             color:'#75bbe2',//折线条颜色
+//         },
+//         areaStyle: {
+//             color: '#75bbe2',//背景填充颜色
+//         }
+//     }]
+// };
+//
+// myChart03.setOption(option03);
 
 //chart04
 
@@ -904,13 +904,13 @@ var myChart05 = echarts.init(document.getElementById('chart05'));
 var option05 = {
     title: {
         show:false,
-        text: '折线图堆叠'
+        text: ''
     },
     tooltip: {
         trigger: 'axis'
     },
     legend: {
-        data:['中国平安','沪深300']
+        data:['平安','保险', '科技']
     },
     grid: {
         left: '3%',
@@ -935,15 +935,30 @@ var option05 = {
     },
     series: [
         {
-            name:'中国平安',
+            name:'平安',
             type:'line',
             stack: '总量',
+            lineStyle:{
+            color:'#75bbe2',//折线条颜色
+            },
             data:[100, 400, 500, 300, 200, 300,]
         },
         {
-            name:'沪深300',
+            name:'保险',
             type:'line',
             stack: '总量',
+            lineStyle:{
+                color:'#75bbe2',//折线条颜色
+            },
+            data:[100, 400, 200, 500, 200, 300,]
+        },
+        {
+            name:'科技',
+            type:'line',
+            stack: '总量',
+            lineStyle:{
+                color:'#75bbe2',//折线条颜色
+            },
             data:[100, 400, 200, 500, 200, 300,]
         },
 
@@ -1393,6 +1408,7 @@ var option12 = {
         formatter: "{a} <br/>{b}: {c} ({d}%)"
     },
     legend: {
+        show:false,
         orient: 'vertical',
         x: 'left',
         data:['利空','利好']
@@ -1401,7 +1417,8 @@ var option12 = {
         {
             name:'访问来源',
             type:'pie',
-            radius: ['50%', '70%'],
+            radius: ['45%', '70%'],
+            center: ['50%', '44%'],
             avoidLabelOverlap: false,
             label: {
                 normal: {
@@ -1409,7 +1426,7 @@ var option12 = {
                     position: 'center'
                 },
                 emphasis: {
-                    show: true,
+                    show: false,
                     textStyle: {
                         fontSize: '16',
                         fontWeight: 'normal'
@@ -1421,9 +1438,13 @@ var option12 = {
                     show: false
                 }
             },
+            itemStyle:{
+                borderColor:'#141f3d',
+                borderWidth: 4,
+            },
             data:[
-                {value:335, name:'利空'},
-                {value:234, name:'利好'},
+                {value:224, name:'利空',itemStyle:{normal:{color:'#4499a9'}}},
+                {value:335, name:'利好',itemStyle:{normal:{color:'#c65d3e'}}},
             ]
         }
     ]
@@ -1455,12 +1476,17 @@ var option14 = {
         boundaryGap: [0, 0.01],
         splitLine:{show: false},//去除网格线
 
-
     },
     yAxis: {
         type: 'category',
         data: ['-10%','-9%','-8%','-7%','-6%','-5%','-4%','-3%','-2%','-1%','0','1%','2%','3%','4%','5%','6%','7%','8%','9%','10%'],
         splitLine:{show: false},//去除网格线
+        itemStyle:{
+            normal:{
+                color:'red'
+            }
+        }
+
 
     },
     series: [
@@ -1469,11 +1495,25 @@ var option14 = {
             type: 'bar',
             barWidth:'50%',
             data: [1,2,2,3,4,5,6,7,7,8,9,8,7,7,6,6,4,4,2,2,1],
-            itemStyle: {
-                normal: {
-                    color: '#3398DB'
+            // itemStyle: {
+            //     normal: {
+            //         color: '#3398DB'
+            //     }
+            // },
+            itemStyle:{
+                normal:{
+                    color:function(params){
+                        var indexColor = params.name.slice(0,1);
+                        if(indexColor == '-'){
+                            return '#4498a9'
+                        }else if (indexColor =='0'){
+                            return '#b9bbc4'
+                        }else{
+                            return '#c65c3e'
+                        }
+                    }
                 }
-            },
+            }
         }
     ]
 };

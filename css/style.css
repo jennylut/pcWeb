@@ -108,7 +108,7 @@ a{
 }
 #chart05{
     width:100%;
-    height:200px;
+    height:300px;
 }
 #chart06{
     width:100%;
@@ -128,7 +128,7 @@ a{
 }
 #chart10{
     width:100%;
-    height:400px;
+    height:330px;
 }
 #chart11{
     width:100%;
@@ -140,7 +140,7 @@ a{
 }
 #chart12{
     width:100%;
-    height:200px;
+    height:300px;
 }
 .pieW{
     position: relative;
@@ -587,6 +587,63 @@ ul.news {
     color: #F05A23;;
 }
 /*高频交易模拟 end*/
+
+
+.achartW {
+    position: relative;
+}
+.achartL {
+    position: absolute;
+    font-size: 48px;
+    color: #fff;
+    top: 25%;
+    left: 2%;
+}
+.achartL span{
+    display: block;
+}
+.achartR {
+    position: absolute;
+    font-size: 48px;
+    color: #fff;
+    top: 25%;
+    left: 82%;
+}
+.achartL span em{
+    font-size: 14px;
+    margin: 0 -4px;
+}
+.achartR span em{
+    font-size: 14px;
+    margin: 0 -2px;
+}
+.achartL span:last-child{
+    font-size:24px;
+}
+.achartR span:last-child{
+    font-size:24px;
+}
+.achartR span{
+    display: block;
+}
+
+
+/*word cloud style*/
+#tagsList {
+    position:relative;
+    width:400px;
+    height:300px;
+    margin: 0px auto;
+}
+#tagsList span {
+    position:absolute;
+    top:0px;
+    left:0px;
+    font-family: DIN-Regular;
+    color:#F05A23;
+    padding: 3px 6px;
+}
+/*word cloud style*/
 @media (min-width: 1501px) and (max-width: 1800px){
     .container {
         width: 1500px;
